@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -207,7 +207,7 @@
         }
 
         .events-section {
-            padding: 80px 20px;
+            padding: 80px 20px 100px 20px;
             text-align: center;
         }
 
@@ -282,152 +282,6 @@
             background: #2e525d;
         }
 
-        .guestbook-section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .guestbook-container {
-            max-width: 650px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(8px);
-            padding: 45px 35px;
-            border-radius: 24px;
-            border: 1px solid #dceef8;
-            box-shadow: 0 12px 35px rgba(31,58,66,0.1);
-            text-align: left;
-        }
-
-        .guestbook-section h2.section-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 58px;
-            color: #1f3a42;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .guestbook-section p.section-sub {
-            text-align: center;
-            color: #556b73;
-            font-size: 18px;
-            margin-bottom: 35px;
-        }
-
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 17px;
-            font-weight: 600;
-            color: #1f3a42;
-            margin-bottom: 8px;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 16px 18px;
-            border: 1px solid #b8d4e5;
-            border-radius: 12px;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 18px;
-            background: #ffffff;
-            color: #1f3a42;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: #1f3a42;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            height: 120px;
-        }
-
-        .btn-submit {
-            display: block;
-            width: 100%;
-            background: #1f3a42;
-            color: #ffffff;
-            padding: 16px;
-            border: none;
-            border-radius: 12px;
-            font-size: 19px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-submit:hover {
-            background: #2e525d;
-        }
-
-        .comments-list {
-            margin-top: 30px;
-            max-height: 320px;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
-
-        .comment-item {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 14px;
-            margin-bottom: 16px;
-            border: 1px solid #dceef8;
-            box-shadow: 0 4px 15px rgba(31,58,66,0.05);
-        }
-
-        .comment-item strong {
-            color: #1f3a42;
-            display: block;
-            font-size: 19px;
-            margin-bottom: 6px;
-        }
-
-        .comment-item span {
-            color: #4a5c64;
-            font-size: 17px;
-            line-height: 1.5;
-        }
-
-        /* Admin / Yönetici Paneli */
-        .admin-panel {
-            max-width: 650px;
-            margin: 30px auto 80px auto;
-            background: rgba(31, 58, 66, 0.05);
-            border: 1px dashed #1f3a42;
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .admin-panel h4 {
-            color: #1f3a42;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .btn-admin {
-            background: #2e525d;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-admin:hover {
-            background: #1f3a42;
-        }
-
         @media (max-width: 600px) {
             .hero h1 { font-size: 38px; }
             .hero .couple-names { font-size: 62px; }
@@ -442,7 +296,6 @@
             .event-card h3 { font-size: 26px; }
             .event-place { font-size: 19px; }
             .event-address, .event-date { font-size: 16px; }
-            .guestbook-container { padding: 25px 15px; }
         }
     </style>
 </head>
@@ -523,33 +376,6 @@
         </div>
     </div>
 
-    <div class="guestbook-section">
-        <h2 class="section-title">Dilek Kutusu</h2>
-        <p class="section-sub">Mutluluk dileklerinizi bizimle paylaşın!</p>
-        <div class="guestbook-container">
-            <form id="commentForm">
-                <div class="form-group">
-                    <label for="guestName">Adınız Soyadınız</label>
-                    <input type="text" id="guestName" placeholder="Örn: Ahmet Yılmaz" required>
-                </div>
-                <div class="form-group">
-                    <label for="guestMessage">Mesajınız & Dilekleriniz</label>
-                    <textarea id="guestMessage" placeholder="Mutluluklar dilerim..." required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Mesajı Gönder</button>
-            </form>
-
-            <div class="comments-list" id="commentsList"></div>
-        </div>
-
-        <!-- Sadece senin görebileceğin ve dilekleri JSON olarak indirebileceğin alan -->
-        <div class="admin-panel">
-            <h4>Yönetici Paneli (Dilekleri Kaydet)</h4>
-            <p style="font-size: 14px; color: #556b73; margin-bottom: 12px;">Yazılan tüm dilekleri tek tıkla <b>dilekler.json</b> formatında bilgisayarına indirebilirsin.</p>
-            <button class="btn-admin" onclick="downloadJsonFile()">📥 Dilekleri JSON Olarak İndir</button>
-        </div>
-    </div>
-
     <script>
         const music = document.getElementById('bgMusic');
         const musicBtnText = document.getElementById('musicBtnText');
@@ -616,61 +442,6 @@
             document.getElementById("minutes").innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
             document.getElementById("seconds").innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
         }, 1000);
-
-        function loadMessages() {
-            const list = document.getElementById('commentsList');
-            list.innerHTML = '';
-            
-            let messages = JSON.parse(localStorage.getItem('weddingMessages')) || [];
-            
-            if (messages.length === 0) {
-                list.innerHTML = '<div class="comment-item"><span>Henüz mesaj yazılmamış. İlk mesajı sen gönder! 😊</span></div>';
-                return;
-            }
-
-            messages.forEach(msg => {
-                const item = document.createElement('div');
-                item.classList.add('comment-item');
-                item.innerHTML = `<strong>${escapeHtml(msg.name)}</strong><span>${escapeHtml(msg.message)}</span>`;
-                list.appendChild(item);
-            });
-        }
-
-        document.getElementById('commentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('guestName').value.trim();
-            const message = document.getElementById('guestMessage').value.trim();
-
-            if(name && message) {
-                let messages = JSON.parse(localStorage.getItem('weddingMessages')) || [];
-                messages.unshift({ name: name, message: message, date: new Date().toLocaleString() });
-                localStorage.setItem('weddingMessages', JSON.stringify(messages));
-                loadMessages();
-                document.getElementById('commentForm').reset();
-                alert('Dileğin başarıyla kaydedildi! Teşekkürler ❤️');
-            }
-        });
-
-        function downloadJsonFile() {
-            let messages = JSON.parse(localStorage.getItem('weddingMessages')) || [];
-            if(messages.length === 0) {
-                alert("İndirilecek henüz bir dilek yok!");
-                return;
-            }
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(messages, null, 4));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "dilekler.json");
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
-        }
-
-        function escapeHtml(text) {
-            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        }
-
-        window.onload = loadMessages;
     </script>
 </body>
 </html>
